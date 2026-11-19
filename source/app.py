@@ -45,7 +45,7 @@ document.querySelector('#save').onclick=()=>act('/draft');document.querySelector
             t=s['technical'];a=t['scopes'];needed=({'shared'} if a else set())|({'data'} if 'hospital' in a else set())|({'points'} if 'public' in a else set())
             if not t['title'] or not a or not needed<=set(s['materials']) or ('hospital' in a and not t['data_use']) or ('public' in a and not t['notice']):return Reply({'error':'incomplete'},422)
             if s['confirmed']!=s['revision']:return Reply({'error':'partner_confirmation_required'},409)
-            s['receipt']=s['receipt'] or 'APP-001';s['history'].append({'action':'accepted','application':s['receipt'],'revision':s['revision']});return {'application':s['receipt'],'revision':s['revision'],'correction':s['correction']}
+            s['receipt']=s['receipt'] or 'APP-001';s['history'].append({'action':'corrected' if s['correction'] else 'accepted','application':s['receipt'],'revision':s['revision'],'corrected_fields':s['correction']});s['correction']=[];return {'application':s['receipt'],'revision':s['revision'],'correction':s['correction']}
         return super().post(p,d,h)
 
 if __name__=='__main__':main(Site)

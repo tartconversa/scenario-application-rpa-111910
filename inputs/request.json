@@ -1,0 +1,19 @@
+{
+  "application_reference": "co-create-alpha",
+  "actor": "technical",
+  "technical": {
+    "title": "区域智能试验",
+    "scopes": [
+      "hospital",
+      "public"
+    ],
+    "mode": "trial",
+    "data_use": "脱敏后院内试验",
+    "notice": "点位周边告知"
+  },
+  "materials": [
+    "shared",
+    "data",
+    "points"
+  ]
+}

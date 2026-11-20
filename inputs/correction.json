@@ -1,0 +1,11 @@
+{
+  "application_reference": "APP-001",
+  "fields": ["notice"],
+  "technical": {
+    "title": "区域智能试验",
+    "scopes": ["hospital", "public"],
+    "mode": "trial",
+    "data_use": "脱敏后院内试验",
+    "notice": "点位周边补充告知（补正）"
+  }
+}
